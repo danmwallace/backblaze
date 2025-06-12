@@ -1,0 +1,11 @@
+[Unit]
+Description=Waiting to backup user home directory files to Backblaze
+Requires=backblaze-backup.service 
+
+[Timer]
+Unit=backblaze-backup.service
+OnCalendar=*-*-* 23:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

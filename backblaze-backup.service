@@ -1,0 +1,11 @@
+[Unit]
+Description=waiting to backup home directory to Backblaze
+Wants=backup.timer
+
+[Service]
+Type=oneshot
+ExecStart=/home/dwallace/Code/restic-make-backup.sh
+User=dwallace
+
+[Install]
+WantedBy=multi-user.target
